@@ -1,223 +1,248 @@
 @use "./base.scss";
 
 // ─────────────────────────────────────────────
-//  Japanese minimalism · Pastel blue-grey
-//  Principles: ma (space), clarity, calm
+//  MD Notebook / misc-store.com stijl
+//  Swiss-Japanese minimalism
+//  Ivoor · Donkergrijs · Haarfijn
 // ─────────────────────────────────────────────
 
-// === TYPOGRAPHY & READABILITY ================
+// === TYPOGRAFIE ==============================
 
 body {
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 16px;
+  line-height: 1.85;
   letter-spacing: 0.01em;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
-// Noto Serif headers — readable and elegant
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  line-height: 1.35;
-  margin-top: 2.2em;
-  margin-bottom: 0.6em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin-top: 2.5em;
+  margin-bottom: 0.5em;
   color: var(--dark);
 }
 
-h1 { font-size: 2rem;   }
-h2 { font-size: 1.45rem; }
-h3 { font-size: 1.15rem; }
+h1 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid var(--lightgray);
+  padding-bottom: 0.6em;
+}
 
-// Breathing room between paragraphs
+h2 { font-size: 1.3rem; font-weight: 500; }
+h3 { font-size: 1.05rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+
 p {
   margin-bottom: 1.4em;
+  color: var(--darkgray);
 }
 
-// Comfortable line length for reading (~65 characters)
-article {
-  max-width: 680px;
-}
-
-// === LINKS ====================================
+// === LINKS ===================================
 
 a {
   text-decoration: none;
+  color: var(--darkgray);
   border-bottom: 1px solid var(--lightgray);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.15s ease;
   padding-bottom: 1px;
 }
 
 a:hover {
-  border-bottom-color: var(--secondary);
-  color: var(--secondary);
+  border-bottom-color: var(--darkgray);
+  color: var(--dark);
 }
 
-// Internal wiki-links — subtle, not loud
 .internal {
   background: none;
   border-bottom: 1px solid var(--lightgray);
 }
 
 .internal:hover {
-  border-bottom-color: var(--secondary);
+  border-bottom-color: var(--darkgray);
 }
 
-// === LAYOUT — MORE SPACE =====================
+// === LAYOUT ==================================
 
-// More air around the main content
+// Comfortabele leeskolom
+article {
+  max-width: 660px;
+}
+
+// Ruimte rondom content
 .center {
-  padding: 0 2rem;
+  padding: 0 2.5rem;
 }
 
-// Wider gap between sidebar and content
+// Lucht tussen kolommen
 #quartz-body {
-  column-gap: 2.5rem;
+  column-gap: 3rem;
 }
 
-// === SIDEBAR — LIGHTER, QUIETER ==============
+// === SIDEBAR =================================
 
 #quartz-left, #quartz-right {
-  opacity: 0.92;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
 }
 
-// Page title in sidebar — elegant
-#quartz-left .page-title {
-  font-size: 1.15rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+// Paginatitel — klein, uppercase, als een label
+#quartz-left .page-title a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-// Explorer folder labels — lighter
-.folder-title {
-  font-weight: 400;
-  letter-spacing: 0.03em;
-}
-
-// === CARDS / LISTS ============================
-
-// Note cards on folder/tag pages
-article li, .section-li {
-  border-bottom: 1px solid var(--lightgray);
-  padding: 0.9rem 0;
-  margin: 0;
-  list-style: none;
-}
-
-article li:last-child, .section-li:last-child {
+  color: var(--dark);
   border-bottom: none;
 }
 
-// === BLOCKQUOTES ==============================
+// Explorer maplabels
+.folder-title {
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// === BLOCKQUOTE ==============================
 
 blockquote {
-  border-left: 2px solid var(--secondary);
-  margin: 2em 0;
-  padding: 0.4em 0 0.4em 1.8em;
-  opacity: 0.88;
-  font-style: italic;
+  border-left: 1px solid var(--gray);
+  margin: 2.5em 0;
+  padding: 0 0 0 1.8em;
+  font-style: normal;
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
-// === CODE =====================================
+// === CODE ====================================
 
 code {
-  font-size: 0.88em;
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
+  font-size: 0.85em;
+  padding: 0.15em 0.45em;
+  border-radius: 2px;
   background: var(--highlight);
+  border: 1px solid var(--lightgray);
 }
 
-// === HORIZONTAL RULE — DELICATE ===============
+pre code {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+// === LIJSTEN =================================
+
+ul, ol {
+  padding-left: 1.4em;
+}
+
+li {
+  margin-bottom: 0.35em;
+  color: var(--darkgray);
+}
+
+// === HORIZONTALE LIJN ========================
 
 hr {
   border: none;
   border-top: 1px solid var(--lightgray);
-  margin: 3em auto;
-  width: 40%;
-  opacity: 0.5;
+  margin: 3.5em 0;
+  opacity: 0.6;
 }
 
-// === GRAPH ====================================
+// === NOTITIEKAARTEN (mapoverzichten) =========
 
-.graph > #global-graph-outer {
-  border: 1px solid var(--lightgray);
-  border-radius: 6px;
+.section-li, ul.section-ul > li {
+  border-bottom: 1px solid var(--lightgray);
+  padding: 1rem 0;
+  margin: 0;
+  list-style: none;
 }
 
-// === SCROLLBAR — SUBTLE =======================
-
-::-webkit-scrollbar {
-  width: 5px;
+.section-li:last-child, ul.section-ul > li:last-child {
+  border-bottom: none;
 }
 
-::-webkit-scrollbar-track {
+// Titels op overzichtspagina's
+.section-li .section-title {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+// === TAGS ====================================
+
+.tag-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--lightgray) !important;
+  border-radius: 0 !important;
+  padding: 0.2em 0.6em;
+  color: var(--gray) !important;
   background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--lightgray);
-  border-radius: 10px;
+.tag-link:hover {
+  border-color: var(--darkgray) !important;
+  color: var(--darkgray) !important;
 }
 
-// === FOOTER ===================================
+// === GRAAF ===================================
+
+.graph > #global-graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 0;
+}
+
+// === INHOUDSOPGAVE ===========================
+
+.toc {
+  border-left: 1px solid var(--lightgray);
+  padding-left: 1.2rem;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+// === ZOEKBALK ================================
+
+.search-bar {
+  border-radius: 0;
+  border: 1px solid var(--lightgray);
+  font-size: 0.88rem;
+}
+
+// === SCROLLBAR ===============================
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 0;
+}
+
+// === FOOTER ==================================
 
 footer {
-  opacity: 0.5;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  margin-top: 4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-top: 5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--lightgray);
 }
 
-// === TAGS =====================================
-
-.tag-link {
-  border: 1px solid var(--lightgray);
-  border-radius: 2px;
-  padding: 0.15em 0.6em;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
-  text-transform: lowercase;
-  border-bottom: 1px solid var(--lightgray) !important;
-}
-
-.tag-link:hover {
-  background: var(--highlight);
-  border-color: var(--secondary) !important;
-}
-
-// === SEARCH ===================================
-
-.search-bar {
-  border-radius: 3px;
-  border: 1px solid var(--lightgray);
-  transition: border-color 0.2s;
-}
-
-.search-bar:focus-within {
-  border-color: var(--secondary);
-}
-
-// === TABLE OF CONTENTS ========================
-
-.toc {
-  border-left: 2px solid var(--lightgray);
-  font-size: 0.85rem;
-  line-height: 1.7;
-  padding-left: 1rem;
-}
-
-// === MOBILE REFINEMENTS =======================
+// === MOBIEL ==================================
 
 @media (max-width: 800px) {
-  body {
-    font-size: 16px;
-  }
-
-  .center {
-    padding: 0 1.2rem;
-  }
-
-  h1 { font-size: 1.8rem; }
+  body { font-size: 15px; }
+  .center { padding: 0 1.2rem; }
+  h1 { font-size: 1.55rem; }
 }
