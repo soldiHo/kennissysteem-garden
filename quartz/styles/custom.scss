@@ -1,3 +1,222 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// ─────────────────────────────────────────────
+//  Japanese minimalism · Pastel blue-grey
+//  Principles: ma (space), clarity, calm
+// ─────────────────────────────────────────────
+
+// === TYPOGRAPHY & READABILITY ================
+
+body {
+  font-size: 17px;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+}
+
+// Elegant, thin headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+  color: var(--dark);
+}
+
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.55rem; }
+h3 { font-size: 1.2rem;  }
+
+// Breathing room between paragraphs
+p {
+  margin-bottom: 1.4em;
+}
+
+// Comfortable line length for reading (~65 characters)
+article {
+  max-width: 680px;
+}
+
+// === LINKS ====================================
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--lightgray);
+  transition: border-color 0.2s ease, color 0.2s ease;
+  padding-bottom: 1px;
+}
+
+a:hover {
+  border-bottom-color: var(--secondary);
+  color: var(--secondary);
+}
+
+// Internal wiki-links — subtle, not loud
+.internal {
+  background: none;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+.internal:hover {
+  border-bottom-color: var(--secondary);
+}
+
+// === LAYOUT — MORE SPACE =====================
+
+// More air around the main content
+.center {
+  padding: 0 2rem;
+}
+
+// Wider gap between sidebar and content
+#quartz-body {
+  column-gap: 2.5rem;
+}
+
+// === SIDEBAR — LIGHTER, QUIETER ==============
+
+#quartz-left, #quartz-right {
+  opacity: 0.92;
+}
+
+// Page title in sidebar — elegant
+#quartz-left .page-title {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+// Explorer folder labels — lighter
+.folder-title {
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+// === CARDS / LISTS ============================
+
+// Note cards on folder/tag pages
+article li, .section-li {
+  border-bottom: 1px solid var(--lightgray);
+  padding: 0.9rem 0;
+  margin: 0;
+  list-style: none;
+}
+
+article li:last-child, .section-li:last-child {
+  border-bottom: none;
+}
+
+// === BLOCKQUOTES ==============================
+
+blockquote {
+  border-left: 2px solid var(--secondary);
+  margin: 2em 0;
+  padding: 0.4em 0 0.4em 1.8em;
+  opacity: 0.88;
+  font-style: italic;
+}
+
+// === CODE =====================================
+
+code {
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  background: var(--highlight);
+}
+
+// === HORIZONTAL RULE — DELICATE ===============
+
+hr {
+  border: none;
+  border-top: 1px solid var(--lightgray);
+  margin: 3em auto;
+  width: 40%;
+  opacity: 0.5;
+}
+
+// === GRAPH ====================================
+
+.graph > #global-graph-outer {
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+}
+
+// === SCROLLBAR — SUBTLE =======================
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 10px;
+}
+
+// === FOOTER ===================================
+
+footer {
+  opacity: 0.5;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--lightgray);
+}
+
+// === TAGS =====================================
+
+.tag-link {
+  border: 1px solid var(--lightgray);
+  border-radius: 2px;
+  padding: 0.15em 0.6em;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  border-bottom: 1px solid var(--lightgray) !important;
+}
+
+.tag-link:hover {
+  background: var(--highlight);
+  border-color: var(--secondary) !important;
+}
+
+// === SEARCH ===================================
+
+.search-bar {
+  border-radius: 3px;
+  border: 1px solid var(--lightgray);
+  transition: border-color 0.2s;
+}
+
+.search-bar:focus-within {
+  border-color: var(--secondary);
+}
+
+// === TABLE OF CONTENTS ========================
+
+.toc {
+  border-left: 2px solid var(--lightgray);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  padding-left: 1rem;
+}
+
+// === MOBILE REFINEMENTS =======================
+
+@media (max-width: 800px) {
+  body {
+    font-size: 16px;
+  }
+
+  .center {
+    padding: 0 1.2rem;
+  }
+
+  h1 { font-size: 1.8rem; }
+}
